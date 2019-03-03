@@ -1,11 +1,15 @@
 ---
 layout: default
-description: Latest posts
+title: Blog
+description: Latest posts in Blog
 pagination:
     enabled: true
+    category: blog
+    sort_field: 'title'
+    sort_reverse: true
 ---
 
-<h1>Welcome!</h1>
+<h1>Blog</h1>
 
 <ul class="post-list">
     {% for post in paginator.posts %}
