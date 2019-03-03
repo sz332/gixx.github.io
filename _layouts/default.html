@@ -23,15 +23,14 @@
     </head>
     <body>
         <header>
-            <h1><a href="/">Gixx-web</a></h1>
+            <h1><a href="/">{{ site.title }}</a></h1>
         </header>
         <nav>
-            <ul>
-                {% for category in site.categories %}
-                <li><a href="/{{ category | first }}">{{ category | first }}</a></li>
-                {% endfor %}
-            </ul>
+            {% include navigation.html %}
         </nav>
+        <aside>
+            {% include taglist.html %}
+        </aside>
         <main>
             {{ content }}
         </main>

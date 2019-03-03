@@ -1,27 +1,61 @@
 title: The world of Gixx
+
 baseurl: ""
+
 url: "https://gixx-web.com"
+
 facebook_username:
+
 twitter_username:
+
 github_username:
+
 linkedin_username:
+
 future: true
+
 exclude:
   - README.md
   - vendor
+
 env: production
+
 excerpt_separator: <!--more-->
+
 markdown: kramdown
+
 permalink: /:categories/:title.html
+
+autopages:
+  enabled: true
+  tags:
+    layouts:
+      - postlist.html
+    permalink: /tags/:tag/
+    title:  'Tag: :tag'
+    slugify:
+      mode: 'ascii'
+      cased: false
+    enabled: true
+  categories:
+    layouts:
+      - postlist.html
+    permalink: /:cat/
+    title:  'Category: :cat'
+    enabled: true
+  collections:
+    enabled: false
+
 pagination:
   enabled: true
-  per_page: 3
+  per_page: 5
   offset: 0
   permalink: '/page/:num/'
   title: ':title - page :num of :max'
   limit: 0
   sort_field: 'date'
   sort_reverse: true
+
 plugins:
   - jekyll-feed
   - jekyll-archives
@@ -34,23 +68,20 @@ plugins:
   - jekyll-tagging-related_posts
   - jekyll-archives
   - jekyll-paginate-v2
-jekyll-archives:
-  enabled:
-    - tags
-  layouts:
-    tag: "tagarchive"
-  permalinks:
-    tag: '/tags/:name.html'
+
 jekyll_tidy:
   exclude: ["robots.txt"]
   compress_html: false
+
 sass:
   sass_dir: _sass
   sourcemap: true
   style: compressed
+
 kramdown:
   input: GFM
   syntax_highlighter: rouge
+
 responsive_image:
   template: _includes/responsive-image.html
   default_quality: 90
